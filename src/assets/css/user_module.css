@@ -1,0 +1,57 @@
+.user_module_table
+{
+    border-collapse: collapse;
+    min-width: 100%;
+    
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.user_module_table_container
+{
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 30px;
+    padding: 2vw;
+    width: fit-content;
+    min-width: 90%;
+    background-color: rgb(247, 244, 244);
+}
+ 
+.user_module_table td
+{
+    padding: 1vw;
+}
+
+tr:nth-child(even) 
+{
+    background-color: rgb(231, 114, 114);
+    color: white;
+}
+
+.user-module-title
+{
+    padding-top: 0;
+    margin-top: 0;
+    color: rgb(223, 65, 65);
+    font-family: BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+}
+
+.user-create-button
+{
+    border: 0px;
+    background-color: rgb(223, 65, 65);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: medium;
+}
+
+.user-create-button:hover
+{
+    border: 1px solid rgb(223, 65, 65);
+    background-color: white;
+    color: rgb(223, 65, 65);
+    cursor: pointer;
+}
+

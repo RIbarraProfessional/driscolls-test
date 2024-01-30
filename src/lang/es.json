@@ -1,0 +1,12 @@
+{
+    "nav_users_text":"Usuarios",
+    "nav_news_text":"Noticias",
+    "nav_lang_text":"Idioma",
+    "user_module_title":"Modulo Usuarios",
+    "user_table_id_text":"ID Usuario",
+    "user_table_name_text":"Nombre",
+    "user_table_email_text":"Email",
+    "user_table_edit_text":"Editar",
+    "user_table_delete_text":"Eliminar",
+    "user_module_create_button":"Crear Usuario"
+}

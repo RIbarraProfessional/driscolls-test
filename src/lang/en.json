@@ -1,0 +1,14 @@
+{
+    "nav_users_text":"Users",
+    "nav_news_text":"News",
+    "nav_lang_text":"Language",
+    "user_module_title":"Users Module",
+    "user_table_id_text":"User ID",
+    "user_table_name_text":"Name",
+    "user_table_email_text":"Email",
+    "user_table_edit_text":"Edit",
+    "user_table_delete_text":"Delete",
+    "user_module_create_button":"Create User",
+    "edit_button_text":"Edit",
+    "delete_button_text":"Delete"
+}
