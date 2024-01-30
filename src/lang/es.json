@@ -2,11 +2,15 @@
     "nav_users_text":"Usuarios",
     "nav_news_text":"Noticias",
     "nav_lang_text":"Idioma",
+    "nav_lang_text_en":"Ingles",
+    "nav_lang_text_es":"Español",
     "user_module_title":"Modulo Usuarios",
     "user_table_id_text":"ID Usuario",
     "user_table_name_text":"Nombre",
     "user_table_email_text":"Email",
     "user_table_edit_text":"Editar",
     "user_table_delete_text":"Eliminar",
-    "user_module_create_button":"Crear Usuario"
+    "user_module_create_button":"Crear Usuario",
+    "edit_button_text":"Editar",
+    "delete_button_text":"Eliminar"
 }

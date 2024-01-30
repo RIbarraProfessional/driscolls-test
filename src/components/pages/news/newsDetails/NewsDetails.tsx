@@ -3,8 +3,9 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { initReactI18next } from "react-i18next";
 import i18n from "i18next";
-import langEN from "../../lang/en.json";
-import langES from "../../lang/es.json";
+import langEN from "../../../../lang/en.json";
+import langES from "../../../../lang/es.json";
+
 
 const resources = {
     en: {
@@ -24,13 +25,13 @@ i18n.use(initReactI18next).init({
     },
 });
 
-const News_module = () => {
+const NewsDetails = () => {
     const { t } = useTranslation();
     return(
         <div className="mainc-container">
-            tes
+            veas
         </div>
     );
 }
 
-export default News_module;
+export default NewsDetails;

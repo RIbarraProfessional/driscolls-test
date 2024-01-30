@@ -28,6 +28,11 @@ i18n.use(initReactI18next).init({
     },
 });
 
+function create_user_function()
+{
+    console.log("click");
+}
+
 const User_module = () => {
     const { t } = useTranslation();
     
@@ -39,7 +44,7 @@ const User_module = () => {
             <div className="user_module_table_container">
                 <User_table_contents />
             </div>
-            <button className="user-create-button">{t("user_module_create_button")}</button>
+            <button onClick={create_user_function} className="user-create-button">{t("user_module_create_button")}</button>
         </div>
     );
 }

@@ -2,6 +2,8 @@
     "nav_users_text":"Users",
     "nav_news_text":"News",
     "nav_lang_text":"Language",
+    "nav_lang_text_en":"English",
+    "nav_lang_text_es":"Spanish",
     "user_module_title":"Users Module",
     "user_table_id_text":"User ID",
     "user_table_name_text":"Name",
