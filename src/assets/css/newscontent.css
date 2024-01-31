@@ -1,0 +1,100 @@
+.col-12
+{
+    margin-bottom: 2vw;
+}
+
+.news-list-container
+{
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    padding: 2vw;
+    width: fit-content;
+    min-width: 90%;
+    min-height: 100%;
+    background-color: rgb(247, 244, 244);
+    margin-bottom: 1vw;
+}
+
+.items-new-image
+{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.item-news-header
+{
+    padding: .75vw;
+}
+
+.item-news-title
+{
+    font-size: larger;
+    text-align: justify;
+    font-family: BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+}
+
+.item-news-header-image
+{
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 400px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.item-news-container
+{
+    background-image: url();
+    background-color: rgb(240, 223, 223);
+    height: 100%;
+    margin-bottom: 1vw;
+    backdrop-filter: blur(3px);
+    opacity: 85%;
+    border-radius: 2px;
+}
+
+.item-news-container:hover
+{
+    cursor: pointer;
+    opacity: 100%;
+}
+
+.inner-article-image
+{
+    margin-bottom: 3vw;
+}
+
+.news-inner-image
+{
+    max-width: 90%;
+    max-height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.article-container
+{
+    padding: 3vw;
+    text-align: justify;
+}
+
+.article-extract
+{
+    font-style: italic;
+    margin-bottom: 3vw;
+}
+
+.news-inner-content
+{
+    line-break: normal;
+}
+
+.article-title
+{
+    font-weight: bold;
+    text-align: justify;
+}

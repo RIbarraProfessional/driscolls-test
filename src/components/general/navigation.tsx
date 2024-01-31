@@ -47,17 +47,17 @@ const Navigation = () => {
     return(
     <Navbar expand="lg" className="bg-body-tertiary top-navbar">
       <Container>
-        <Navbar.Brand href="#"></Navbar.Brand>
+        <Navbar.Brand ></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto navbar-buttons-container">
             <NavLink className="nav-button navigation-Navlink" to="/users">{t("nav_users_text")}</NavLink>
             <NavLink className="nav-button navigation-Navlink" to="/news">{t("nav_news_text")}</NavLink>
             <NavDropdown title={t("nav_lang_text")}  className="nav-button-dropdown" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#" onClick={() => handleLanguageChange("en")}>
+                <NavDropdown.Item  onClick={() => handleLanguageChange("en")}>
                     {t("nav_lang_text_en")}
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#" onClick={() => handleLanguageChange("es")}>
+                <NavDropdown.Item  onClick={() => handleLanguageChange("es")}>
                     {t("nav_lang_text_es")}
                 </NavDropdown.Item>
             </NavDropdown>

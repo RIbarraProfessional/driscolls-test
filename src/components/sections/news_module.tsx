@@ -1,36 +1,55 @@
-import React from "react";
+import React, { useState } from 'react';
+
+import axios from 'axios';
 
 import { useTranslation } from "react-i18next";
-import { initReactI18next } from "react-i18next";
-import i18n from "i18next";
-import langEN from "../../lang/en.json";
-import langES from "../../lang/es.json";
 
-const resources = {
-    en: {
-        translation: langEN,
-    },
-    es: {
-        translation: langES,
-    },
-};
-  
-i18n.use(initReactI18next).init({
-    resources,
-    lng: "en",
-    fallbackLng: "en",
-    interpolation: {
-        escapeValue: false,
-    },
-});
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
-const News_module = () => {
+import backend_url from "../../Vars.js"
+
+import New_list_item from "../sections/news_list_item.tsx"
+
+import "../../assets/css/newscontent.css"
+
+
+
+function News_module () {
     const { t } = useTranslation();
+
+    const [saveddata, setData] = useState([]);
+
+    React.useEffect(() => {
+        fetch(backend_url+"/api/newsList")
+        .then((res) => res.json())
+        .then((data) => {
+            setData(data.data)
+            
+        });
+      }, []);
+
     return(
         <div className="mainc-container">
-            tes
+            <div className='news-list-container'>
+            <Container>
+                <Row>
+                    {saveddata.map((val) => {
+                        var url = val["id"];
+                        return(
+                            <Col xs="12" sm="12" md="6" lg="4">
+                                <New_list_item  title={val["title"]} extract={val["extract"]} image={"/news_images/"+val["image"]} url={"/news/"+url}/>
+                            </Col>
+                        );
+                    })}
+                
+                </Row>
+            </Container>
+            </div>
         </div>
     );
+    
 }
 
 export default News_module;

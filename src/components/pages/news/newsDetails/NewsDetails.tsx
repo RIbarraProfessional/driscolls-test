@@ -1,37 +1,51 @@
-import React from "react";
+import React, { useState } from 'react';
+
+import backend_url from "../../../../Vars"
+
+import {
+    useParams
+  } from "react-router-dom";
 
 import { useTranslation } from "react-i18next";
-import { initReactI18next } from "react-i18next";
-import i18n from "i18next";
-import langEN from "../../../../lang/en.json";
-import langES from "../../../../lang/es.json";
-
-
-const resources = {
-    en: {
-        translation: langEN,
-    },
-    es: {
-        translation: langES,
-    },
-};
-  
-i18n.use(initReactI18next).init({
-    resources,
-    lng: "en",
-    fallbackLng: "en",
-    interpolation: {
-        escapeValue: false,
-    },
-});
 
 const NewsDetails = () => {
     const { t } = useTranslation();
-    return(
+
+    let { _id } = useParams();
+
+    const [saveddata, setData] = useState([]);
+
+    React.useEffect(() => {
+        fetch(backend_url+"/api/newsDetail?id="+_id)
+        .then((res) => res.json())
+        .then((data) => {
+            setData(data.data)
+        });
+      }, []);
+
+      return(
         <div className="mainc-container">
-            veas
+            {
+                saveddata.map((val) => {
+                        return(
+                            <div className='article-container'>
+                                <h1 className='article-title'>
+                                    {val["title"]}
+                                </h1>
+                                <div className='article-extract'>
+                                    {val["extract"]}
+                                </div>
+                                <div className='inner-article-image'>
+                                    <img className='news-inner-image' src={"/news_images/"+val["image"]}></img>
+                                </div>
+                                <div className='news-inner-content'>
+                                    {val["content"]}
+                                </div>
+                            </div>
+                        );
+            })}
         </div>
-    );
+        );
 }
 
 export default NewsDetails;
