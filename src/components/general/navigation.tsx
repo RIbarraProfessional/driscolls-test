@@ -37,10 +37,9 @@ interface nav_button_properties {
     text: string;
 }
   
-function Nav_button({ text }: nav_button_properties) {
-    return (
-      <button className="nav-button">{text}</button>
-    );
+function handleLanguageChange(newLang)
+{
+    i18n.changeLanguage(newLang);
 }
 
 const Navigation = () => {
@@ -55,10 +54,10 @@ const Navigation = () => {
             <Nav.Link href="#" className="nav-button"><NavLink className="navigation-Navlink" to="/users">{t("nav_users_text")}</NavLink></Nav.Link>
             <Nav.Link href="#" className="nav-button"><NavLink className="navigation-Navlink" to="/news">{t("nav_news_text")}</NavLink></Nav.Link>
             <NavDropdown title={t("nav_lang_text")}  className="nav-button" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#">
+                <NavDropdown.Item href="#" onClick={() => handleLanguageChange("en")}>
                     {t("nav_lang_text_en")}
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#">
+                <NavDropdown.Item href="#" onClick={() => handleLanguageChange("es")}>
                     {t("nav_lang_text_es")}
                 </NavDropdown.Item>
             </NavDropdown>
