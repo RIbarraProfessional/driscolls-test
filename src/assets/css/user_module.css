@@ -79,3 +79,11 @@ tr:nth-child(even)
     background-color: rgb(223, 65, 65);
     color: white;
 }
+
+
+.modal-container
+{
+    border-radius: 5px;
+    padding: 2vw;
+    background-color: rgb(247, 244, 244);
+}

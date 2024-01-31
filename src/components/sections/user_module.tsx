@@ -9,6 +9,7 @@ import langES from "../../lang/es.json";
 import "../../assets/css/user_module.css";
 
 import User_table_contents from "./user_table_contents.tsx";
+import User_new_modal from "./user_new_modal.tsx";
 
 const resources = {
     en: {
@@ -44,7 +45,7 @@ const User_module = () => {
             <div className="user_module_table_container">
                 <User_table_contents />
             </div>
-            <button onClick={create_user_function} className="user-create-button">{t("user_module_create_button")}</button>
+            <User_new_modal/>
         </div>
     );
 }
