@@ -21,6 +21,10 @@ con.connect(function(err) {
 app.use('/',express.static('../build/')); 
 
 app.get("/api/userList", (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin','*');
+  res.removeHeader('x-powered-by');
+  res.setHeader('Access-Control-Allow-Methods','GET');
+  res.setHeader('Access-Control-Allow-Headers','Content-Type');
     var sql = "SELECT `id`, `name`, `email` FROM users;";
     var query_result = "";
     con.query(sql, function (err, result) {
@@ -32,6 +36,10 @@ app.get("/api/userList", (req, res) => {
 });
 
 app.get("/api/userDetail", (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin','*');
+  res.removeHeader('x-powered-by');
+  res.setHeader('Access-Control-Allow-Methods','GET');
+  res.setHeader('Access-Control-Allow-Headers','Content-Type');
     var sql = "SELECT `id`, `name`, `email` FROM users WHERE id = '"+req.query.id+"';";
     var query_result = "";
     con.query(sql, function (err, result) {
@@ -43,7 +51,10 @@ app.get("/api/userDetail", (req, res) => {
 });
 
 app.post("/api/userEdit", (req, res) => {
-    
+  res.setHeader('Access-Control-Allow-Origin','*');
+  res.removeHeader('x-powered-by');
+  res.setHeader('Access-Control-Allow-Methods','POST');
+  res.setHeader('Access-Control-Allow-Headers','Content-Type');
     var sql = "UPDATE users SET `name` = '"+req.query.name+"', `email` = '"+req.query.email+"' WHERE id = '"+req.query.id+"';";
     var query_result = "";
     con.query(sql, function (err, result) {
@@ -55,6 +66,10 @@ app.post("/api/userEdit", (req, res) => {
 });
 
 app.post("/api/userCreate", (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin','*');
+  res.removeHeader('x-powered-by');
+  res.setHeader('Access-Control-Allow-Methods','POST');
+  res.setHeader('Access-Control-Allow-Headers','Content-Type');
     
     var sql = "INSERT INTO users (`id`,`name`,`email`,`password`) VALUES(null,'"+req.query.name+"','"+req.query.email+"',SHA('"+req.query.password+"'));";
     var query_result = "";
@@ -67,6 +82,10 @@ app.post("/api/userCreate", (req, res) => {
 });
 
 app.post("/api/userDelete", (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin','*');
+  res.removeHeader('x-powered-by');
+  res.setHeader('Access-Control-Allow-Methods','POST');
+  res.setHeader('Access-Control-Allow-Headers','Content-Type');
     
     var sql = "DELETE FROM users WHERE id = '"+req.query.id+"';";
     var query_result = "";
@@ -79,7 +98,11 @@ app.post("/api/userDelete", (req, res) => {
 });
 
 app.get("/api/newsList", (req, res) => {
-    var sql = "SELECT `id`, `title`, `extract`, `content`, `image` FROM news;";
+  res.setHeader('Access-Control-Allow-Origin','*');
+  res.removeHeader('x-powered-by');
+  res.setHeader('Access-Control-Allow-Methods','GET');
+  res.setHeader('Access-Control-Allow-Headers','Content-Type');
+    var sql = "SELECT `id`, `title`, `extract`, `image` FROM news;";
     var query_result = "";
     con.query(sql, function (err, result) {
         if (err) throw err;
@@ -90,6 +113,10 @@ app.get("/api/newsList", (req, res) => {
 });
 
 app.get("/api/newsDetail", (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin','*');
+  res.removeHeader('x-powered-by');
+  res.setHeader('Access-Control-Allow-Methods','GET');
+  res.setHeader('Access-Control-Allow-Headers','Content-Type');
     var sql = "SELECT `id`, `title`, `extract`, `content`, `image` FROM news WHERE id = '"+req.query.id+"';";
     var query_result = "";
     con.query(sql, function (err, result) {
