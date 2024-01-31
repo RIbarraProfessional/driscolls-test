@@ -12,5 +12,14 @@
     "user_table_delete_text":"Delete",
     "user_module_create_button":"Create User",
     "edit_button_text":"Edit",
-    "delete_button_text":"Delete"
+    "delete_button_text":"Delete",
+    "new_user_modal_title":"New User",
+    "form_text_email":"Email",
+    "form_text_name":"Name",
+    "form_text_password":"Password",
+    "button_text_save":"Save",
+    "alert_success_text":"Successful operation",
+    "invalid_email_no_data":"Please use a valid email",
+    "invalid_name_no_data":"Please use a valid name",
+    "invalid_password_no_data":"Please ad a valid password"
 }

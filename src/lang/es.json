@@ -12,5 +12,14 @@
     "user_table_delete_text":"Eliminar",
     "user_module_create_button":"Crear Usuario",
     "edit_button_text":"Editar",
-    "delete_button_text":"Eliminar"
+    "delete_button_text":"Eliminar",
+    "new_user_modal_title":"Nuevo Usuario",
+    "form_text_email":"Email",
+    "form_text_name":"Nombre",
+    "form_text_password":"Contraseña",
+    "button_text_save":"Guardar",
+    "alert_success_text":"Exito en la operación",
+    "invalid_email_no_data":"Por favor ingresa un correo valido",
+    "invalid_name_no_data":"Por favor ingresa un nombre valido",
+    "invalid_password_no_data":"Por favor ingresa una contraseña valida"
 }
