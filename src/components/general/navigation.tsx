@@ -51,9 +51,9 @@ const Navigation = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto navbar-buttons-container">
-            <Nav.Link href="#" className="nav-button"><NavLink className="navigation-Navlink" to="/users">{t("nav_users_text")}</NavLink></Nav.Link>
-            <Nav.Link href="#" className="nav-button"><NavLink className="navigation-Navlink" to="/news">{t("nav_news_text")}</NavLink></Nav.Link>
-            <NavDropdown title={t("nav_lang_text")}  className="nav-button" id="basic-nav-dropdown">
+            <NavLink className="nav-button navigation-Navlink" to="/users">{t("nav_users_text")}</NavLink>
+            <NavLink className="nav-button navigation-Navlink" to="/news">{t("nav_news_text")}</NavLink>
+            <NavDropdown title={t("nav_lang_text")}  className="nav-button-dropdown" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#" onClick={() => handleLanguageChange("en")}>
                     {t("nav_lang_text_en")}
                 </NavDropdown.Item>
