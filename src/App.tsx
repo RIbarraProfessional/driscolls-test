@@ -19,7 +19,7 @@ import Navigation from './components/general/navigation.tsx';
 
 import MainContent from './components/general/maincontent.tsx'; 
 import Users from './components/pages/users/Users.tsx'
-import UserDetails from './components/pages/news/newsDetails/NewsDetails.tsx'
+import UserDetails from './components/pages/users/userDetails/UserDetails.tsx'
 import News from './components/pages/news/News.tsx'
 import NewsDetails from './components/pages/news/newsDetails/NewsDetails.tsx'
 

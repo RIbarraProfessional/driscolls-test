@@ -17,6 +17,8 @@ import backend_url from "../../Vars.js"
 import { useTranslation } from "react-i18next";
 
 
+
+
 const style = {
   position: 'absolute' as 'absolute',
   top: '50%',
@@ -27,7 +29,12 @@ const style = {
   p: 4,
 };
 
-export default function User_new_modal() {
+interface list_props {
+    id: number;
+    data: JSON;
+  }
+
+export default function User_edit_modal({id, data}:list_props) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -44,17 +51,16 @@ export default function User_new_modal() {
     }
     else
     {
-      var name = document.getElementById("form_new_name").value;
-      var email = document.getElementById("form_new_email").value;
-      var password = document.getElementById("form_new_password").value;
-      var description = document.getElementById("form_new_description").value;
+      var name = document.getElementById("form_edit_name").value;
+      var email = document.getElementById("form_edit_email").value;
+      var description = document.getElementById("form_edit_description").value;
       var parameters = {
           name: name,
           email: email,
-          password: password,
+          id: id,
           description: description
       };
-      axios.post(backend_url+'/api/userCreate', null, { 
+      axios.post(backend_url+'/api/userEdit', null, { 
           params:  parameters
       })
       .then(res => {
@@ -65,7 +71,7 @@ export default function User_new_modal() {
               showCloseButton: true,
               confirmButtonText: 'Ok',
               didClose: () => {
-                window.location.reload();;
+                window.location.reload();
               }
           });
         })
@@ -77,7 +83,7 @@ export default function User_new_modal() {
   
   return (
     <div>
-      <button onClick={handleOpen} className="user-create-button">{t("user_module_create_button")}</button>
+      <button onClick={handleOpen} className="small_button delete_button">{t("user_table_edit_text")}</button>
       <Modal
         open={open}
         onClose={handleClose}
@@ -86,39 +92,31 @@ export default function User_new_modal() {
       >
         <Box sx={style} className="modal-container">
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            {t("new_user_modal_title")}
+            {t("edit_user_modal_title")}
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
           <Form noValidate validated={validated} onSubmit={handleSubmit}>
-            <Form.Group className="mb-3" controlId="form_new_email">
+            <Form.Group className="mb-3" controlId="form_edit_email">
                 <Form.Label>{t("form_text_email")}</Form.Label>
-                <Form.Control type="email" placeholder="" required />
+                <Form.Control type="email" placeholder="" defaultValue={data["email"]} required />
                 <Form.Control.Feedback type="invalid">
                   {t("invalid_email_no_data")}
                 </Form.Control.Feedback>
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="form_new_name">
+            <Form.Group className="mb-3" controlId="form_edit_name">
                 <Form.Label>{t("form_text_name")}</Form.Label>
-                <Form.Control type="text" placeholder="" required />
+                <Form.Control type="text" placeholder="" defaultValue={data["name"]} required />
                 <Form.Control.Feedback type="invalid">
                   {t("invalid_name_no_data")}
                 </Form.Control.Feedback>
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="form_new_password">
-                <Form.Label>{t("form_text_password")}</Form.Label>
-                <Form.Control type="password" placeholder="" required />
+            <Form.Group className="mb-3" controlId="form_edit_description">
+                <Form.Label>{t("form_text_name")}</Form.Label>
+                <Form.Control as="textarea" rows={3} defaultValue={data["description"]} required/>
                 <Form.Control.Feedback type="invalid">
-                  {t("invalid_password_no_data")}
-                </Form.Control.Feedback>
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="form_new_description">
-                <Form.Label>{t("form_text_description")}</Form.Label>
-                <Form.Control as="textarea" rows={3} required/>
-                <Form.Control.Feedback type="invalid">
-                  {t("invalid_description_no_data")}
+                  {t("invalid_name_no_data")}
                 </Form.Control.Feedback>
             </Form.Group>
 

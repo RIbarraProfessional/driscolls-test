@@ -25,7 +25,7 @@ app.get("/api/userList", (req, res) => {
   res.removeHeader('x-powered-by');
   res.setHeader('Access-Control-Allow-Methods','GET');
   res.setHeader('Access-Control-Allow-Headers','Content-Type');
-    var sql = "SELECT `id`, `name`, `email` FROM users;";
+    var sql = "SELECT `id`, `name`, `email`, `description` FROM users;";
     var query_result = "";
     con.query(sql, function (err, result) {
         if (err) throw err;
@@ -40,7 +40,7 @@ app.get("/api/userDetail", (req, res) => {
   res.removeHeader('x-powered-by');
   res.setHeader('Access-Control-Allow-Methods','GET');
   res.setHeader('Access-Control-Allow-Headers','Content-Type');
-    var sql = "SELECT `id`, `name`, `email` FROM users WHERE id = '"+req.query.id+"';";
+    var sql = "SELECT `id`, `name`, `email`, `description` FROM users WHERE id = '"+req.query.id+"';";
     var query_result = "";
     con.query(sql, function (err, result) {
         if (err) throw err;
@@ -55,7 +55,22 @@ app.post("/api/userEdit", (req, res) => {
   res.removeHeader('x-powered-by');
   res.setHeader('Access-Control-Allow-Methods','POST');
   res.setHeader('Access-Control-Allow-Headers','Content-Type');
-    var sql = "UPDATE users SET `name` = '"+req.query.name+"', `email` = '"+req.query.email+"' WHERE id = '"+req.query.id+"';";
+    var sql = "UPDATE users SET `name` = '"+req.query.name+"', `email` = '"+req.query.email+"', `description` = '"+req.query.description+"' WHERE id = '"+req.query.id+"';";
+    var query_result = "";
+    con.query(sql, function (err, result) {
+        if (err) throw err;
+        query_result = result;
+        
+        res.json({ message: "ok" , data: query_result});
+      });
+});
+
+app.post("/api/userEditPassword", (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin','*');
+  res.removeHeader('x-powered-by');
+  res.setHeader('Access-Control-Allow-Methods','POST');
+  res.setHeader('Access-Control-Allow-Headers','Content-Type');
+    var sql = "UPDATE users SET `password` = SHA('"+req.query.password+"') WHERE id = '"+req.query.id+"';";
     var query_result = "";
     con.query(sql, function (err, result) {
         if (err) throw err;
@@ -71,7 +86,7 @@ app.post("/api/userCreate", (req, res) => {
   res.setHeader('Access-Control-Allow-Methods','POST');
   res.setHeader('Access-Control-Allow-Headers','Content-Type');
     
-    var sql = "INSERT INTO users (`id`,`name`,`email`,`password`) VALUES(null,'"+req.query.name+"','"+req.query.email+"',SHA('"+req.query.password+"'));";
+    var sql = "INSERT INTO users (`id`,`name`,`email`,`password`,`description`) VALUES(null,'"+req.query.name+"','"+req.query.email+"',SHA('"+req.query.password+"'),'"+req.query.description+"');";
     var query_result = "";
     con.query(sql, function (err, result) {
         if (err) throw err;

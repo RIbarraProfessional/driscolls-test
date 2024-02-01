@@ -13,7 +13,7 @@
     margin-right: auto;
     border-radius: 5px;
     padding: 2vw;
-    width: fit-content;
+    max-width: auto;
     min-width: 90%;
     background-color: rgb(247, 244, 244);
     margin-bottom: 1vw;
@@ -65,6 +65,14 @@ tr:nth-child(even)
     border: 0px;
     background-color: white;
     border-radius: 10%;
+    padding: 10px;
+}
+
+.small_button_inner
+{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 .edit_button
@@ -85,4 +93,30 @@ tr:nth-child(even)
     border-radius: 5px;
     padding: 2vw;
     background-color: rgb(247, 244, 244);
+}
+
+.deployed-image-user
+{
+    max-height: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: .5vw;
+    margin-top: .5vw;
+    box-shadow: 50px;
+
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: 0px solid #000000;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+.description-bow
+{
+    padding: .5vw;
+    text-align: justify;
+    font-family: BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
 }
