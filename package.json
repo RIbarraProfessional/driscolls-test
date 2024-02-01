@@ -1,6 +1,6 @@
 {
   "name": "@ribarra/driscolls-test-ribarra",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "private": false,
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
@@ -61,9 +61,7 @@
   "devDependencies": {},
   "author": "ribarra",
   "license": "ISC",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
+  "files": [ "node_server", "public" , "src" ],
   "repository": {
     "type": "git",
     "url": "https://github.com/RIbarraProfessional/driscolls-test.git"
