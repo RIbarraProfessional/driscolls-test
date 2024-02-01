@@ -1,5 +1,6 @@
 import React from "react";
 
+import {  NavLink } from "react-router-dom";
 
 interface list_item_props {
     title: string;
@@ -11,15 +12,17 @@ interface list_item_props {
 function New_list_item({ title, extract, image, url }: list_item_props) 
 {
     return(
-        <div className="item-news-container" onClick={() => window.location.assign("#"+url)}>
-            <div className="item-news-header-image" style={{ 
-            backgroundImage: "url("+image+")" 
-            }}>
+        <NavLink  to={url}>
+            <div className="item-news-container" onClick={() => window.location.assign("#"+url)}>
+                <div className="item-news-header-image" style={{ 
+                backgroundImage: "url("+image+")" 
+                }}>
+                </div>
+                <div className="item-news-header">
+                    <h2 className="item-news-title">{title}</h2>
+                </div>
             </div>
-            <div className="item-news-header">
-                <h2 className="item-news-title">{title}</h2>
-            </div>
-        </div>
+        </NavLink>
     );
 
 }

@@ -6,7 +6,7 @@ import React, { Component } from "react";
 import './App.css';
 
 
-import { Route, NavLink, Routes, HashRouter } from "react-router-dom";
+import { Route, NavLink, Routes, HashRouter, BrowserRouter } from "react-router-dom";
 
 import { useTranslation } from "react-i18next";
 import { initReactI18next } from "react-i18next";
@@ -43,8 +43,9 @@ i18n.use(initReactI18next).init({
 
 function App() {
   const { t } = useTranslation();
+  
   return (
-    <HashRouter>
+    <BrowserRouter>
       <div className="App">
         <div className='App-bodyback'>
           <div className='App-bodyback-overlay'>
@@ -67,7 +68,7 @@ function App() {
           </div>
         </div>
       </div>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 

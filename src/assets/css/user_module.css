@@ -131,3 +131,9 @@ tr:nth-child(even)
     text-align: justify;
     padding: 2vw;
 }
+
+.row
+{
+    margin-right: auto;
+    margin-left: auto;
+}
