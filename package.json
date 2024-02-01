@@ -1,7 +1,7 @@
 {
-  "name": "driscolls-test",
+  "name": "@ribarra/driscolls-test-ribarra",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@emotion/react": "^11.11.3",
@@ -55,5 +55,21 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "Driscolls test app",
+  "main": "index.js",
+  "devDependencies": {},
+  "author": "ribarra",
+  "license": "ISC",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RIbarraProfessional/driscolls-test.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RIbarraProfessional/driscolls-test/issues"
+  },
+  "homepage": "https://github.com/RIbarraProfessional/driscolls-test#readme"
 }
