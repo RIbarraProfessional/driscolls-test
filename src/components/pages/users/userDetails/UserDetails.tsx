@@ -34,15 +34,21 @@ const UserDetails = () => {
                 saveddata.map((val) => {
                         return(
                             <div className='user-container'>
-                                <Container>
+                                <Container className="inner-container">
                                     <Row>
                                         <Col xs="12" sm="12" md="6" lg="6" xl="6">
                                             <div>
-                                                <img src={val["name"]}></img>
+                                                <img className="inner-profile-pic" src="/profile.jpg"></img>
                                             </div>
                                         </Col>
                                         <Col xs="12" sm="12" md="12" lg="6" xl="6">
-                                            <h1>{val["name"]}</h1>
+                                            <div className="inner-data-set">
+                                                    
+                                                <h1>{val["name"]}</h1>
+                                                <p><b>Email: </b> {val["email"]}</p>
+                                                <p><b>Description: </b></p>
+                                                <p>{val["description"]}</p>
+                                            </div>
                                         </Col>
                                     </Row>
                                 </Container>

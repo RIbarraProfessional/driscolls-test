@@ -120,3 +120,14 @@ tr:nth-child(even)
     text-align: justify;
     font-family: BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
 }
+
+.inner-container
+{
+    background-color: rgb(240, 223, 223);;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: 0px solid #000000;
+    text-align: justify;
+    padding: 2vw;
+}

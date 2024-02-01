@@ -319,7 +319,9 @@ const User_table_contents = () => {
               <Container>
                 <Row>
                   <Col xs="12" sm="12" m="3" lg="3" xl="3">
-                    <img className="deployed-image-user" src="/profile.jpg"></img>
+                    <NavLink  to={"/users/"+row["id"]}>
+                      <img className="deployed-image-user" src="/profile.jpg"></img>
+                    </NavLink>
                     <button className="small_button delete_button small_button_inner" onClick={()=>change_password(row["id"])}>{t("change_password_text")}</button>
                   </Col>
                   <Col xs="12" sm="12" m="6" lg="6" xl="6">
